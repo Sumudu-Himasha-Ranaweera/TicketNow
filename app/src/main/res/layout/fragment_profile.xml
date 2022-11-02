@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="234dp"
+        android:layout_height="224dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/profile_pic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/EditTxtName"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_fields"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="19dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Name"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <EditText
+        android:id="@+id/EditTxtEmail"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_fields"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="19dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Email"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTxtName" />
+
+    <EditText
+        android:id="@+id/EditTxtPhone"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_fields"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="19dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTxtID" />
+
+    <EditText
+        android:id="@+id/EditTxtID"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_fields"
+        android:drawableStart="@drawable/ic_id"
+        android:drawablePadding="19dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="NIC / Passport No"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTxtEmail" />
+
+    <EditText
+        android:id="@+id/EditTxtAddress"
+        android:layout_width="340dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_fields"
+        android:drawableStart="@drawable/ic_location"
+        android:drawablePadding="19dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:hint="Address"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTxtPhone" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/login_button"
+        android:elevation="5dp"
+        android:padding="10dp"
+        android:text="Update"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTxtAddress"
+        app:layout_constraintVertical_bias="0.183" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

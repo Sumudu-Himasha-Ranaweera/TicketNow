@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "160228489931",
+    "project_id": "ticketnow-9d3fc",
+    "storage_bucket": "ticketnow-9d3fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160228489931:android:76bfad5842c2b55239794e",
+        "android_client_info": {
+          "package_name": "com.example.ticketnow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160228489931-eg3shd3vu29ciij427a8tmkbhv65su8a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVRdUzbOLC4vMjhk4JuqfL3Lcy1jzbfU8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160228489931-eg3shd3vu29ciij427a8tmkbhv65su8a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

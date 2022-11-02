@@ -25,10 +25,15 @@
             android:icon="@drawable/ic_timetable"
             android:iconTint="@color/black"
             android:title="@string/timetable" />
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_logout"
-            android:iconTint="@color/black"
-            android:title="@string/log_out" />
+
+        <item android:title="Log out">
+            <menu>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    android:iconTint="@color/black"
+                    android:title="@string/log_out" />
+                </menu>
+        </item>
     </group>
 </menu>

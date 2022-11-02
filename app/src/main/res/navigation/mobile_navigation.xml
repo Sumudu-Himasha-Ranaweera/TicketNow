@@ -12,14 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.ticketnow.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_profile"
+        android:name="com.example.ticketnow.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.ticketnow.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_wallet"
+        android:name="com.example.ticketnow.ui.wallet.WalletFragment"
+        android:label="@string/wallet"
+        tools:layout="@layout/fragment_wallet" />
+
+    <fragment
+        android:id="@+id/nav_timetable"
+        android:name="com.example.ticketnow.ui.timetable.TimeTableFragment"
+        android:label="@string/timetable"
+        tools:layout="@layout/fragment_time_table" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.ticketnow.ui.LogoutFragment"
+        android:label="@string/log_out"
+        tools:layout="@layout/fragment_logout" />
 </navigation>
