@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.example.ticketnow.R;
 public class OTPActivity extends AppCompatActivity {
 
     private EditText inputCode1, inputCode2, inputCode3, inputCode4, inputCode5, inputCode6;
+    Button verify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class OTPActivity extends AppCompatActivity {
         inputCode4 = findViewById(R.id.inputCode4);
         inputCode5 = findViewById(R.id.inputCode5);
         inputCode6 = findViewById(R.id.inputCode6);
+
+        
 
         setupOTPInputs();
     }

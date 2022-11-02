@@ -170,8 +170,8 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-//    private boolean validateInfo(String userEmail, String userPassword) {
-//
+    private boolean validateInfo(String userEmail, String userPassword) {
+
 //        //User Email Validation
 //        if (userEmail.length() == 0)
 //        {
@@ -185,17 +185,17 @@ public class LoginActivity extends AppCompatActivity {
 //            email.setError("Valid User Email is Required");
 //            return false;
 //        }
-//
-//        //Password validation
-//        if(userPassword.length() < 6)
-//        {
-//            password.requestFocus();
-//            password.setError("minimum 6 character required");
-//            return false;
-//        }
-//        else
-//        {
-//            return true;
-//        }
-//    }
+
+        //Password validation
+        if(userPassword.length() < 6)
+        {
+            password.requestFocus();
+            password.setError("minimum 6 character required");
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 }

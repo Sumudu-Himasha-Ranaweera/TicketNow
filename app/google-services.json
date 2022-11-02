@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "160228489931",
+    "firebase_url": "https://ticketnow-9d3fc-default-rtdb.firebaseio.com",
     "project_id": "ticketnow-9d3fc",
     "storage_bucket": "ticketnow-9d3fc.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "160228489931-4n2f0fl1cba9kt4lje5jq5ploaabv6jt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ticketnow",
+            "certificate_hash": "cd57919aa8395dd257f821c34dc2e400428c6ba9"
+          }
+        },
         {
           "client_id": "160228489931-eg3shd3vu29ciij427a8tmkbhv65su8a.apps.googleusercontent.com",
           "client_type": 3

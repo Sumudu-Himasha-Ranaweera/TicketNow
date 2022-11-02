@@ -170,7 +170,7 @@
         android:drawablePadding="19dp"
         android:elevation="5dp"
         android:ems="10"
-        android:hint="+94-xxxxxxxxx"
+        android:hint="Mobile Number"
         android:inputType="number"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
