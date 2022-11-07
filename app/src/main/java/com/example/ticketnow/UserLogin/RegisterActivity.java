@@ -16,12 +16,17 @@ import com.example.ticketnow.R;
 import com.example.ticketnow.models.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.TimeUnit;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -80,8 +85,12 @@ public class RegisterActivity extends AppCompatActivity {
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createUser();
+
                 progressBar.setVisibility(View.VISIBLE);
+                btnCheck.setVisibility(View.INVISIBLE);
+
+                createUser();
+
             }
         });
 
@@ -137,15 +146,54 @@ public class RegisterActivity extends AppCompatActivity {
                         //send data to Real-time database
                         UserModel userModel = new UserModel(userID, userEmail, userPhone, userPassword, userConfPassword);
                          reference.child(userID).setValue(userModel);
-                         progressBar.setVisibility(View.GONE);
 
                         Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
 
-                        //connection to the OTP Page
-                            Intent intent  = new Intent(getApplicationContext(), OTPActivity.class);
-                            intent.putExtra("userPhone", number.getText().toString());
-                            startActivity(intent);
-                        //end code
+
+                        //Phone Number Authentication
+                        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                "+94" + number.getText().toString(),
+                                20,
+                                TimeUnit.SECONDS,
+                                RegisterActivity.this,
+                                new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+
+                                    @Override
+                                    public void onVerificationCompleted(@NonNull @NotNull PhoneAuthCredential phoneAuthCredential) {
+
+                                        progressBar.setVisibility(View.GONE);
+                                        btnCheck.setVisibility(View.VISIBLE);
+
+                                    }
+
+                                    @Override
+                                    public void onVerificationFailed(@NonNull @NotNull FirebaseException e) {
+
+                                        progressBar.setVisibility(View.GONE);
+                                        btnCheck.setVisibility(View.VISIBLE);
+                                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                    }
+
+                                    @Override
+                                    public void onCodeSent(@NonNull @NotNull String verificationID, @NonNull @NotNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+
+                                        progressBar.setVisibility(View.GONE);
+                                        btnCheck.setVisibility(View.VISIBLE);
+
+                                        //connection to the OTP Page
+                                        Intent intent  = new Intent(getApplicationContext(), OTPActivity.class);
+                                        intent.putExtra("userPhone", number.getText().toString());
+                                        intent.putExtra("verificationID", verificationID);
+                                        startActivity(intent);
+                                        //end code
+
+                                    }
+                                }
+
+                        );
+
+
 
                     } else {
                         progressBar.setVisibility(View.GONE);

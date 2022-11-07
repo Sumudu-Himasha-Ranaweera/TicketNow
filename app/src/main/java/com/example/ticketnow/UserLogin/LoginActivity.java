@@ -2,17 +2,23 @@ package com.example.ticketnow.UserLogin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.ticketnow.MainActivity;
+import com.example.ticketnow.Navbar.HomeActivity;
 import com.example.ticketnow.R;
+import com.example.ticketnow.ui.profile.ProfileFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -136,15 +142,26 @@ public class LoginActivity extends AppCompatActivity {
                         
                         password.setError(null);
 
+                        String userIDFromDB = snapshot.child(userEnteredUserID).child("userID").getValue(String.class);
                         String emailFromDB = snapshot.child(userEnteredUserID).child("userEmail").getValue(String.class);
                         String numberFromDB = snapshot.child(userEnteredUserID).child("userPhone").getValue(String.class);
 
-                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
 
+                        i.putExtra("userID", userIDFromDB);
                         i.putExtra("email", emailFromDB);
                         i.putExtra("number",numberFromDB);
 
                         startActivity(i);
+
+
+                        //Initialize input manager
+                        InputMethodManager manager = (InputMethodManager) getSystemService(
+                                Context.INPUT_METHOD_SERVICE
+                        );
+                        //Hide soft keyboard
+                        manager.hideSoftInputFromWindow(IDnum.getApplicationWindowToken(), 0);
+                        manager.hideSoftInputFromWindow(password.getApplicationWindowToken(), 0);
 
                     }
                     else
