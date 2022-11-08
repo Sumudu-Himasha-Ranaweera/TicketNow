@@ -13,6 +13,7 @@
             android:name=".Navbar.ViewProfileActivity"
             android:theme="@style/Theme.TicketNow.popMe"
             >
+
         </activity>
         <activity android:name=".Navbar.TimeTableActivity" />
         <activity android:name=".Navbar.WalletActivity" />
@@ -21,9 +22,9 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.TicketNow.NoActionBar">
 
+<!--            android:label="@string/app_name"-->
             <!-- Start the Application -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

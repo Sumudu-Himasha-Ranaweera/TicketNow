@@ -199,6 +199,7 @@
             android:layout_marginLeft="90dp"/>
 
         <ImageButton
+
             android:id="@+id/btn_view"
             android:layout_width="50dp"
             android:layout_height="50dp"

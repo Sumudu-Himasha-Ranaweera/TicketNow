@@ -1,7 +1,9 @@
 package com.example.ticketnow.Navbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +20,14 @@ import com.example.ticketnow.R;
 import com.example.ticketnow.UserLogin.RegisterActivity;
 import com.example.ticketnow.models.ProfileModel;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -42,6 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     //progress bar
     ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,13 +131,18 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+        // User View Profile
         view = (ImageButton) findViewById(R.id.btn_view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                RetriveProfileData();
+
                 Intent popWindow = new Intent(ProfileActivity.this,ViewProfileActivity.class);
+                    popWindow.putExtra("userID", homePassedID);
                 startActivity(popWindow);
             }
+
         });
 
         //Remove bottom status bar
@@ -142,6 +156,7 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
     }
+
 
     private boolean validateInfo(String userName, String userAddress) {
 
