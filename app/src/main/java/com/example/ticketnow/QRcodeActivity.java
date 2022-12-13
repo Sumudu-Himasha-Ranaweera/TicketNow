@@ -65,8 +65,18 @@ public class QRcodeActivity extends AppCompatActivity {
                 MultiFormatWriter writer = new MultiFormatWriter();
 
                 try {
+
+                    String tokenData =
+                            "Token : "+ "Tog_"+LoginSentID+
+                                    "\nUser Name : "+LoginSentID+
+                                    "\nUser Email : "+LoginSentEmail+
+                                    "\nUser Contact No : "+LoginSentPhone+
+                                    "\nJourney Start location : null"+
+                                    "\nJourney End Location : null"+
+                                    "\nJourney Date/Time - 08-11-2022 22.00.00";
+
                     //Initialize bit Matrix
-                    BitMatrix matrix = writer.encode(LoginSentID, BarcodeFormat.QR_CODE, 300,320);
+                    BitMatrix matrix = writer.encode(tokenData, BarcodeFormat.QR_CODE, 300,320);
                     //Initialize Barcode encoder
                     BarcodeEncoder encoder = new BarcodeEncoder();
                     //Initialize bitmap

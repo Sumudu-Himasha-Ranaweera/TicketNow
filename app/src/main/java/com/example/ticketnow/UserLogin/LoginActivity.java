@@ -47,6 +47,9 @@ public class LoginActivity extends AppCompatActivity {
     //progress bar
     ProgressBar progressBar;
 
+    public LoginActivity(Context mMockContext) {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,6 +123,7 @@ public class LoginActivity extends AppCompatActivity {
     }
     //End of remove bottom status bar
 
+
     private void LoginUser() {
 
         //creating variables
@@ -189,20 +193,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean validateInfo(String userEmail, String userPassword) {
 
-//        //User Email Validation
-//        if (userEmail.length() == 0)
-//        {
-//            email.requestFocus();
-//            email.setError("Email cannot be empty");
-//            return false;
-//        }
-//        else if (!userEmail.matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))
-//        {
-//            email.requestFocus();
-//            email.setError("Valid User Email is Required");
-//            return false;
-//        }
-
         //Password validation
         if(userPassword.length() < 6)
         {
@@ -214,5 +204,10 @@ public class LoginActivity extends AppCompatActivity {
         {
             return true;
         }
+    }
+
+    public String validate(String user, String user1) {
+
+        return "Invalid login!";
     }
 }

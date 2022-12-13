@@ -87,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 progressBar.setVisibility(View.VISIBLE);
-                btnCheck.setVisibility(View.INVISIBLE);
+//                btnCheck.setVisibility(View.INVISIBLE);
 
                 createUser();
 
